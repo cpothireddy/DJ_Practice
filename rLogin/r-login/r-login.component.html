@@ -1,0 +1,18 @@
+<form [formGroup]="loginform" (ngSubmit)="getFormData()">
+    <input type="text" formControlName="email" placeholder="Enter Email"/>
+    <span *ngIf="loginform.controls['email'].touched && loginform.controls['email'].errors && loginform.controls['email'].errors.required">
+        Please enter Email
+    </span>
+    <br />
+    <br />
+    <input type="text" formControlName="password" placeholder="Enter Password" />
+    <span *ngIf="loginform.controls['password'].touched && loginform.controls['password'].errors && loginform.controls['password'].errors.required">
+        Please eneter password
+    </span>
+    <span *ngIf="loginform.controls['password'].touched && loginform.controls['password'].errors && loginform.controls['password'].errors.minlength">
+        minlength should be 8
+    </span>
+    <br /><br />
+    <button class="btn btn-success">Submit</button>
+
+</form>

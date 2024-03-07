@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" (ngSubmit)="getLoginData()">
+    <input type="text" formControlName="email" placeholder="Enter Email" />
+    <span
+        *ngIf="loginForm.controls['email'].errors">
+        please enter email
+    </span><br /><br />
+    <input type="text" formControlName="mobile" placeholder="mobile" />
+    <br />
+    <br />
+    Notification: <input type="radio" formControlName="notification" value="email"> Email
+    <input type="radio" formControlName="notification" value="mobile"> Mobile
+    <br />
+    <br />
+    <input type="password" formControlName="password" placeholder="password" />
+
+    <span *ngIf="loginForm.controls['password'].errors">
+        enter valid
+    </span>
+
+
+    <br /><br />
+    <button>Submit</button>
+</form>
